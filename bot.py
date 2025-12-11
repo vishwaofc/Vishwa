@@ -6,11 +6,11 @@ from datetime import datetime
 from telegram import Bot, InlineKeyboardButton, InlineKeyboardMarkup
 import phonenumbers
 
-TOKEN = os.environ.get("TELEGRAM_BOT_TOKEN", "8483482984:AAHjgwqeoMV0Z84Ti6v2MmaJmTR4oCeSlQM")
+TOKEN = os.environ.get("TELEGRAM_BOT_TOKEN", "")
 CHANNEL_ID = "@otpclgs"
 
-USERNAME = os.environ.get("IVASMS_USERNAME", "ruchiyeahanna@gmail.com")
-PASSWORD = os.environ.get("IVASMS_PASSWORD", "#Vishwa123")
+USERNAME = os.environ.get("IVASMS_USERNAME", "")
+PASSWORD = os.environ.get("IVASMS_PASSWORD", "")
 LOGIN_URL = "https://www.ivasms.com/portal/live/my_sms"
 
 ADS_LINKS = [
