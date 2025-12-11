@@ -1,0 +1,81 @@
+===============================================
+ Termux Setup Instructions for Telegram OTP Bot
+===============================================
+
+1. Update Termux
+----------------
+pkg update -y && pkg upgrade -y
+
+
+2. Install Python
+-----------------
+pkg install python -y
+
+
+3. Upgrade pip
+--------------
+pip install --upgrade pip
+
+
+4. Install dependencies
+-----------------------
+Create a file named: requirements.txt
+Add the following:
+
+python-telegram-bot==20.7
+phonenumbers
+requests
+python-dotenv
+aiohttp
+
+Then install them:
+
+pip install -r requirements.txt
+
+
+5. Create .env file
+-------------------
+Run:
+nano .env
+
+Add the following:
+
+TELEGRAM_BOT_TOKEN=YOUR_TELEGRAM_BOT_TOKEN_HERE
+IVASMS_USERNAME=YOUR_IVASMS_EMAIL
+IVASMS_PASSWORD=YOUR_IVASMS_PASSWORD
+
+Save:
+CTRL + X → Y → ENTER
+
+
+6. Load .env inside your Python bot
+-----------------------------------
+Add this at the top of your main .py file:
+
+from dotenv import load_dotenv
+load_dotenv()
+
+
+7. Run your bot
+---------------
+python bot.py
+
+
+8. Keep your bot running even after closing Termux
+--------------------------------------------------
+Install tmux:
+pkg install tmux -y
+
+Start a tmux session:
+tmux
+
+Run your bot:
+python bot.py
+
+Disconnect while bot stays running:
+Press CTRL + B, then D
+
+
+9. Reconnect to tmux anytime
+----------------------------
+tmux attach
